@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.framework.dao.mysql.dao.ResponseMapper">
+  <resultMap id="BaseResultMap" type="com.test.framework.dao.mysql.entity.Response">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="host" jdbcType="VARCHAR" property="host" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="col" jdbcType="VARCHAR" property="col" />
+    <result column="method" jdbcType="VARCHAR" property="method" />
+    <result column="statuscode" jdbcType="VARCHAR" property="statuscode" />
+    <result column="contentType" jdbcType="VARCHAR" property="contenttype" />
+    <result column="userAgent" jdbcType="VARCHAR" property="useragent" />
+    <result column="rule_id" jdbcType="INTEGER" property="ruleId" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.test.framework.dao.mysql.entity.Response">
+    <result column="response" jdbcType="LONGVARCHAR" property="response" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, title, host, url, col, method, statuscode, contentType, userAgent, rule_id
+  </sql>
+  <sql id="Blob_Column_List">
+    response
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from response
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from response
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.test.framework.dao.mysql.entity.Response">
+    insert into response (id, title, host, 
+      url, col, method, statuscode, 
+      contentType, userAgent, rule_id, 
+      response)
+    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{host,jdbcType=VARCHAR}, 
+      #{url,jdbcType=VARCHAR}, #{col,jdbcType=VARCHAR}, #{method,jdbcType=VARCHAR}, #{statuscode,jdbcType=VARCHAR}, 
+      #{contenttype,jdbcType=VARCHAR}, #{useragent,jdbcType=VARCHAR}, #{ruleId,jdbcType=INTEGER}, 
+      #{response,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.test.framework.dao.mysql.entity.Response">
+    insert into response
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="host != null">
+        host,
+      </if>
+      <if test="url != null">
+        url,
+      </if>
+      <if test="col != null">
+        col,
+      </if>
+      <if test="method != null">
+        method,
+      </if>
+      <if test="statuscode != null">
+        statuscode,
+      </if>
+      <if test="contenttype != null">
+        contentType,
+      </if>
+      <if test="useragent != null">
+        userAgent,
+      </if>
+      <if test="ruleId != null">
+        rule_id,
+      </if>
+      <if test="response != null">
+        response,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="host != null">
+        #{host,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="col != null">
+        #{col,jdbcType=VARCHAR},
+      </if>
+      <if test="method != null">
+        #{method,jdbcType=VARCHAR},
+      </if>
+      <if test="statuscode != null">
+        #{statuscode,jdbcType=VARCHAR},
+      </if>
+      <if test="contenttype != null">
+        #{contenttype,jdbcType=VARCHAR},
+      </if>
+      <if test="useragent != null">
+        #{useragent,jdbcType=VARCHAR},
+      </if>
+      <if test="ruleId != null">
+        #{ruleId,jdbcType=INTEGER},
+      </if>
+      <if test="response != null">
+        #{response,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.test.framework.dao.mysql.entity.Response">
+    update response
+    <set>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="host != null">
+        host = #{host,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="col != null">
+        col = #{col,jdbcType=VARCHAR},
+      </if>
+      <if test="method != null">
+        method = #{method,jdbcType=VARCHAR},
+      </if>
+      <if test="statuscode != null">
+        statuscode = #{statuscode,jdbcType=VARCHAR},
+      </if>
+      <if test="contenttype != null">
+        contentType = #{contenttype,jdbcType=VARCHAR},
+      </if>
+      <if test="useragent != null">
+        userAgent = #{useragent,jdbcType=VARCHAR},
+      </if>
+      <if test="ruleId != null">
+        rule_id = #{ruleId,jdbcType=INTEGER},
+      </if>
+      <if test="response != null">
+        response = #{response,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.test.framework.dao.mysql.entity.Response">
+    update response
+    set title = #{title,jdbcType=VARCHAR},
+      host = #{host,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      col = #{col,jdbcType=VARCHAR},
+      method = #{method,jdbcType=VARCHAR},
+      statuscode = #{statuscode,jdbcType=VARCHAR},
+      contentType = #{contenttype,jdbcType=VARCHAR},
+      userAgent = #{useragent,jdbcType=VARCHAR},
+      rule_id = #{ruleId,jdbcType=INTEGER},
+      response = #{response,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.test.framework.dao.mysql.entity.Response">
+    update response
+    set title = #{title,jdbcType=VARCHAR},
+      host = #{host,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      col = #{col,jdbcType=VARCHAR},
+      method = #{method,jdbcType=VARCHAR},
+      statuscode = #{statuscode,jdbcType=VARCHAR},
+      contentType = #{contenttype,jdbcType=VARCHAR},
+      userAgent = #{useragent,jdbcType=VARCHAR},
+      rule_id = #{ruleId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -13,28 +13,28 @@
         </commentGenerator>
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://10.28.4.77:3306/dbName?characterEncoding=utf8"
+                        connectionURL="jdbc:mysql://localhost:3306/mock?characterEncoding=utf8"
                         userId="root"
                         password="root"/>
 
         <javaModelGenerator targetPackage="com.test.framework.dao.mysql.entity"
-                            targetProject="C:/Users/dell/git/CarRentalTest/src/test/java">
+                            targetProject="C:/Users/dell/git/ApiTestFrameWork/src/test/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="carrental_mappers"
-                         targetProject="C:/Users/dell/git/CarRentalTest/src/test/resources">
+        <sqlMapGenerator targetPackage="mysql-mappers"
+                         targetProject="C:/Users/dell/git/ApiTestFrameWork/src/test/resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
         <javaClientGenerator targetPackage="com.test.framework.dao.mysql.dao"
-                             targetProject="C:/Users/dell/git/CarRentalTest/src/test/java" type="XMLMAPPER">
+                             targetProject="C:/Users/dell/git/ApiTestFrameWork/src/test/java" type="XMLMAPPER">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
 
-        <table tableName="cr_%" domainObjectName=""
+        <table tableName="%" domainObjectName=""
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
