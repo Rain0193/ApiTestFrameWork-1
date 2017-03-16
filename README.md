@@ -25,4 +25,5 @@ mvn test
 
 ## Mappers/Dao/entity自动生成
 需保留src/main/resources目录,may be 是mybatis-generator的一个bug
+
 mvn mybatis-generator:generate
