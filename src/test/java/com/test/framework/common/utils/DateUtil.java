@@ -7,9 +7,6 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
-/**
- * Created by yang.wang@beecloud.com on 17-1-3.
- */
 public class DateUtil {
 
     private static final String ISO_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
