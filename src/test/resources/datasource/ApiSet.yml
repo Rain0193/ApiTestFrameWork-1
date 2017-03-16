@@ -1,0 +1,139 @@
+!com.beecloud.carrental.api.datasource.ApiSet
+#车辆服务
+#上报车辆的异常事项
+reportAbnormitiesUrlPath: /vehicles/{id}/abnormities
+#远程锁车门
+remoteLockDoorUrlPath: /vehicles/{id}/door/lock
+#远程开车门
+remoteUnLockDoorUrlPath: /vehicles/{id}/door/unlock
+#获取车辆电子行驶证
+getDrivingLicenseUrlPath: /vehicles/{id}/drivingLicense
+#寻车闪灯鸣笛
+findCarFlashHornUrlPath: /vehicles/{id}/flashhorn
+#新增车辆
+addVehicleUrlPath: /vehicles
+#查询车辆列表,包括车辆的状态信息
+getVechiclesListUrlPath: /rtvehicles
+#获取车辆详细信息
+vechiclesDetailUrlPath: /vehicles/{id}/detail
+#上线车辆
+vehicleOnlineUrlPath: /vehicles/{id}/online
+#下线车辆
+vehicleOfflineUrlPath: /vehicles/{id}/offline
+#上报车辆的异常事项
+vehicleAbnormitiesUrlPath: /vehicles/{id}/abnormities
+#车况修改
+vehicleConditionStatusUrlPath: /vehicles/{id}/condition
+#远程锁车门
+vehicleLockUrlPath: /vehicles/{id}/door/lock
+#远程开车门
+vehicleUnlockUrlPath: /vehicles/{id}/door/unlock
+#查询车辆列表,包括车辆的状态信息
+getVehiclesUrlPath: /rtvehicles
+
+
+#用户服务
+#获取用户列表
+getUserListUrlPath: /users
+#用户登录并注册
+resigerAndLoginUrlPath: /users
+#获取用户基本信息
+getUserInfoUrlPath: /users/{id}
+#审核用户
+auditUserUrlPath: /users/{id}/audit
+#提交实名审核
+commitUserUrlPath: /users/{id}/commit
+#获取用户的审核图片
+getUserIdphotocopiesUrlPath: /users/{id}/idphotocopies
+#获取用户证件信息
+getUserPicsUrlPath: /users/{id}/pictures
+#锁定或者解锁用户
+lockOrUnLockUserUrlPath: /users/{id}/status
+#获取用户及其订单信息
+getUsersOrdersUrlPath: /users/{id}/order
+#修改用户信息
+modifyUserInfoUrlPath: /users/{id}
+#获取用户的优惠券
+getUserCouponsUrlPath: /users/{id}/coupons
+#获取用户消息
+getUserMessagesUrlPath: /users/{id}/messages
+#用户信息反馈
+userFeedbackUrlPath: /users/{id}/feedback
+#获取用户个性标签列表
+getAllTagsUrlPath: /users/tags
+
+#实用服务
+#上传图片
+uploadPicturesUrlPath: /pictures
+#删除图片
+deletePicturesUrlPath: /pictures/{fileId}/delete
+#发送短信验证码
+sendSmsVerificationCodeUrlPath: /sms-verifiction-codes
+#发送消息
+sendMessagesUrlPath: /messages/send
+
+
+#订单服务
+#预定车辆
+reserveOrdersUrlPath: /orders
+#获取订单列表
+getOrdersListUrlPath: /orders
+#获取订单
+getOrderInfoUrlPath: /orders/{id}
+#获取订单及其明细
+getOrderDetailsUrlPath: /orders/{id}/detail
+#还车
+returnVehicleUrlPath: /orders/{id}/end
+#修改订单状态
+modifOrderStatusUrlPath: /orders/{id}/abnormity
+#关闭订单
+closeOrderUrlPath: /orders/{id}/close
+#确认或取消订单
+confirmOrCancelOrderUrlPath: /orders/{id}/status
+# 去支付订单
+prepayOrderUrlPath: /orders/{id}/prepay
+
+#地区服务 : 省市区县的查询服务
+#获取城市列表
+getCityUrlPath: /cities
+#获取区级列表
+getCityAreasUrlPath: /cities/{cityId}/areas
+#获取街道列表
+getAreasStreetsUrlPath: /areas/{areaId}/streets
+#获取热门城市列表
+getHotCitiesUrlPath: /hot-cities
+#获取开通城市列表
+getOpenedCitiesUrlPath: /opened-cities
+#查询街道信息
+searchStreetsUrlPath: /streets
+#获取省列表
+getProvincesUrlPath: /provinces
+
+#站点服务
+#增加站点信息
+addSitesUrlPath: /sites
+#查询站点列表数据
+searchSiteUrlPath: /rtsites
+#上线站点
+siteOnlineUrlPath: /sites/{id}/online
+#下线站点
+siteOfflineUrlPath: /sites/{id}/offline
+#修改站点信息
+modifySiteInfoUrlPath: /sites/{id}
+#订阅有车提醒
+siteNotificationsUrlPath: /site-va-notifications
+#查询站点数据
+getSiteUrlPath: /sites/{id}
+
+
+
+
+#车型服务
+#获取车型价格规则
+getPriceRulesUrlPath: /vehicle-models/pricerules
+#删除车型
+deleteVehicleModelUrlPath: /vehicle-models/{id}
+#增加车型
+addVehicleModelsUrlPath: /vehicle-models
+#查询车型
+searchVehicleModelsUrlPath: /vehicle-models
