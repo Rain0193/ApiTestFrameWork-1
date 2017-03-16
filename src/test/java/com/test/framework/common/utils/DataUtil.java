@@ -5,6 +5,9 @@ package com.test.framework.common.utils;
 
 
 import com.esotericsoftware.yamlbeans.YamlReader;
+import com.test.framework.api.datasource.ApiSet;
+import com.test.framework.api.datasource.DataSet;
+import com.test.framework.api.datasource.TestBed;
 
 import java.io.InputStreamReader;
 
@@ -70,8 +73,4 @@ public class DataUtil {
         	}
         return testBed;
     }
-
-    public static void main(String ...args){
-    	System.out.println(getDataSet().getChunXiRoadSite().getVehicleDataList().toString());
-	}
 }
