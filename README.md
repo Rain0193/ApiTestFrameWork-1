@@ -27,3 +27,6 @@ mvn test
 需保留src/main/resources目录,may be 是mybatis-generator的一个bug
 
 mvn mybatis-generator:generate
+
+## 新增功能
+20170420 ：新增自动生成接口用例集合报告功能
