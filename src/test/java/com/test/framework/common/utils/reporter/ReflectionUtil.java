@@ -1,7 +1,6 @@
 package com.test.framework.common.utils.reporter;
 
-import com.beecloud.carrental.util.DocGenerator;
-import com.beecloud.carrental.util.annotation.RestInterface;
+import com.test.framework.common.utils.annotation.RestInterface;
 
 import java.io.File;
 import java.lang.annotation.Annotation;
@@ -18,7 +17,7 @@ import java.util.Map;
  * @date 2017/4/20.
  */
 public class ReflectionUtil {
-    private final static String casePath = "com.beecloud.carrental.testcase";
+    private final static String casePath = "com.test.framework.api.testcase";
 
     public static Map<String, List<TestSuite>> getTestCaseInfo() {
         Map<String,List<TestSuite>> map = new HashMap<String,List<TestSuite>>();
@@ -28,7 +27,7 @@ public class ReflectionUtil {
                 List<TestSuite> testSuiteList = new ArrayList<TestSuite>();
                 String className = casePath + "." + classFile.substring(0, classFile.indexOf(".class"));
                 try {
-                    Class object = DocGenerator.class.getClassLoader().loadClass(className);
+                    Class object = ReflectionUtil.class.getClassLoader().loadClass(className);
                     if (object.isAnnotationPresent(RestInterface.class)) {
                         TestSuite testSuite = new TestSuite();
                         Annotation interfaceAnnotation = object.getAnnotation(RestInterface.class);
@@ -77,6 +76,6 @@ public class ReflectionUtil {
     private static String getAnnotationFieldValue(Annotation annotation, String field) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         Method method = annotation.getClass()
                 .getDeclaredMethod(field, null);
-        return (String)method.invoke(annotation, null);
+        return method.invoke(annotation, null).toString();
     }
 }

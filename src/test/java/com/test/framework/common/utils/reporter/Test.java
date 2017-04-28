@@ -11,7 +11,7 @@ import java.util.Map;
  */
 public class Test {
     public static void main(String ...args){
-        Map<String,List<TestSuite>> data = ReflectionUtil.getTestCaseInfo();
+        Map<String,List<TestSuite>> data =ReflectionUtil.getTestCaseInfo();
         Generator generator = new Generator(data);
         try {
             generator.productReport();

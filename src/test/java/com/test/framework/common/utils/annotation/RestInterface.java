@@ -8,8 +8,8 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 public @interface RestInterface {
-    public String url();
-    public String description() default "";
-    public String group();
-    public String isCompleted() default "false";
+    String url();
+    String description() default "";
+    String group();
+    String isCompleted() default "false";
 }
