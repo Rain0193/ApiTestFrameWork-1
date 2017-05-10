@@ -46,6 +46,7 @@ public class ResigerAndLoginTest extends AbstractTestNGSpringContextTests{
 
     @Test
     public void TkMybatisTest(){
+        umAccountMapper.delAll();
         System.out.println(umAccountMapper.selectAll().size());
     }
 
