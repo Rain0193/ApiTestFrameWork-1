@@ -45,6 +45,11 @@
     <bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.test.framework.dao.mysql.dao"></property>
         <property name="sqlSessionFactoryBeanName" value="carrental_sqlSessionFactory"/>
+        <property name="properties">
+            <value>
+                mappers=com.test.framework.common.tkmapper.CustomMapper
+            </value>
+        </property>
     </bean>
 
     

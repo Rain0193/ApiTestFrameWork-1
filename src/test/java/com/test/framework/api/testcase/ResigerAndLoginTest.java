@@ -4,12 +4,15 @@ import com.test.framework.api.accessor.RegisterAndLoginAccessor;
 import com.test.framework.api.requestVO.RegisterAndLoginRequest;
 import com.test.framework.common.utils.DbMonitor;
 import com.test.framework.dao.mysql.dao.UmAccountMapper;
+import com.test.framework.dao.mysql.entity.UmAccount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import tk.mybatis.mapper.entity.Condition;
+import tk.mybatis.mapper.entity.Example;
 
 /**
  * @author hong.lin
@@ -46,8 +49,10 @@ public class ResigerAndLoginTest extends AbstractTestNGSpringContextTests{
 
     @Test
     public void TkMybatisTest(){
-        umAccountMapper.delAll();
-        System.out.println(umAccountMapper.selectAll().size());
+      //  umAccountMapper.delAll();
+        Example conditions = new Condition(UmAccount.class);
+        conditions.createCriteria().andEqualTo("id",5);
+        System.out.println(umAccountMapper.selectCountByCondition(conditions));
     }
 
 //    @Test(description = "用户注册登录成功", dataProvider = "correctParameters",groups = "smoke")

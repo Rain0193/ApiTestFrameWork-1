@@ -10,14 +10,15 @@ import tk.mybatis.mapper.mapperhelper.SqlHelper;
  * @description
  * @date 2017/4/28.
  */
-public class DeleteAllProvider extends MapperTemplate {
-    public DeleteAllProvider(Class<?> mapperClass, MapperHelper mapperHelper) {
+public class MyProvider extends MapperTemplate {
+    public MyProvider(Class<?> mapperClass, MapperHelper mapperHelper) {
         super(mapperClass, mapperHelper);
     }
 
 
     public String delAll(MappedStatement ms){
-        final Class<?> entityClass = getEntityClass(ms);
+        Class<?> entityClass = getEntityClass(ms);
+        setResultType(ms, entityClass);
         StringBuilder sql = new StringBuilder();
         sql.append(SqlHelper.deleteFromTable(entityClass, tableName(entityClass)));
         return sql.toString();
