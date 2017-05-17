@@ -30,3 +30,4 @@ mvn mybatis-generator:generate
 
 ## 新增功能
 20170420 ：新增自动生成接口用例集合报告功能
+20170517 ：使用TkMybatis插件,使用通用mapper的方式,减少对Mapper.xml的维护成本
